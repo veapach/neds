@@ -7,7 +7,7 @@ async def main_page(page: ft.Page, username: str):
     page.theme_mode = ft.ThemeMode.DARK
     page.bgcolor = "#1e1e2f"
     page.horizontal_alignment = ft.MainAxisAlignment.CENTER
-    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    #page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
     welcome_text = ft.Text(
         "Добро пожаловать,",
@@ -34,15 +34,16 @@ async def main_page(page: ft.Page, username: str):
         animate_offset=ft.Animation(500, ft.AnimationCurve.EASE_OUT),
     )
 
-    menu = ft.Column(
+    menu = ft.Row(
         [
-            ft.Text("Главное меню", size=28, color="white"),
+            ft.ElevatedButton("Голосовой чат"),
             ft.ElevatedButton("Чат"),
             ft.ElevatedButton("Настройки"),
             ft.ElevatedButton("Выход"),
         ],
         opacity=0,
         offset=ft.transform.Offset(0, 0.1),
+        alignment=ft.CrossAxisAlignment.CENTER,
         animate_opacity=ft.Animation(500, ft.AnimationCurve.EASE_OUT),
         animate_offset=ft.Animation(500, ft.AnimationCurve.EASE_OUT),
     )
