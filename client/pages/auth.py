@@ -10,6 +10,7 @@ async def auth(page: ft.Page):
     page.bgcolor = "#1e1e2f"
     page.horizontal_alignment = ft.MainAxisAlignment.CENTER
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.expand = True
 
     is_login = True
 
@@ -127,5 +128,8 @@ async def auth(page: ft.Page):
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
             spacing=20,
             width=page.width,
+            expand=True,
         )
     )
+
+    page.update()
